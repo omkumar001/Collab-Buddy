@@ -68,6 +68,12 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
+# other files
+Collab BuddyTasks
+mini_project.jucm
+Collab Buddy images.zip/
+landing
+
 # dotenv environment variables file
 .env
 .env.test
