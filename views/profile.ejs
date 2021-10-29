@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="title icon" href="images/title-img.png" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
+      integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+    <title>Student Dashboard | Collab Buddy</title>
+  </head>
+  <body>
+    <!--Navbar-->
+    <nav class="navbar lg-col-5 navbar-expand-md navbar-light">
+      <button
+        type="button"
+        class="navbar-toggler ml-auto mb-2 bg-light"
+        data-toggle="collapse"
+        data-target="#myNavbar" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <div class="container-fluid">
+          <div class="row">
+            <!--sidebar -->
+            <div class="col-xl-2 col-lg-3 col-md-4 sidebar fixed-top">
+              <a href="#" class=" navbar-brand  text-white  d-block  mx-auto  text-center py-3  mb-2 bottom-border"> Student Dashboard </a>
+              <div class="bottom-border pb-3">
+                <img
+                  src="../images/user.png"
+                  alt="User Admin img"
+                  width="90"
+                  class="rounded-circle mr-3"
+                />
+                <a href="#" class="text-white">User</a>
+              </div>
+              <ul class="navbar-nav flex-column mt-2">
+                <li class="nav-item">
+                  <a
+                    href="/profile"
+                    class="nav-link text-white p-2 mb-2 sidebar-link current"
+                  >
+                    <i class="fas fa-home text-light fa-lg mr-3"></i> My Profile
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="/application" class="nav-link text-white p-2 mb-2">
+                    <i class="fas fa-user text-light fa-lg mr-3"></i>My
+                    Application
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!--end of sidebar-->
+
+            <!--topnav -->
+            <div class="col-xl-10 col-lg-9 col-md-8 ml-auto bg-dark fixed-top py-2 top-navbar">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  <a  style="text-decoration: none;" href="/"><h4 class="text-light mb-0">Collab Buddy</h4></a>
+                </div>
+               
+
+                <div class="col-md-8">
+                  <ul class="navbar-nav float-lg-right">
+
+                    <li class="nav-item icon-parent">
+                      <a href="/shome" class="nav-link ">
+                      <i class="fas fa-search fa-lg"></i>   <!-- <i class="fas fa-bell text-muted fa-lg"></i> -->
+                      </a>
+                    </li>
+
+                    <li class="nav-item icon-parent">
+                      <a href="#" class="nav-link icon-bullet">
+                        <i class="fas fa-bell text-muted fa-lg"></i>
+                      </a>
+                    </li>
+
+                    <li class="nav-item icon-parent ">
+                      <a href="#" class="nav-link" data-toggle="modal"  data-target="#sign-out" >
+                        <i class="fas fa-sign-out-alt text-danger fa-lg"></i>
+                      </a>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--end of topnav-->
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--End of Navbar-->
+
+    
+
+    <!--modal-->
+    <div class="modal fade" id="sign-out">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Want to Leave</h4>
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">Click on Logout to leave</div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success" data-dismiss="modal">
+              Stay Here
+            </button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+    <div class="prof"></div>
+
+    <section class="details mt-4 ">
+      <div class="container mycontainer mt-4 ">
+        <div class="row  ">
+          <div class="col-12 title">
+            <h2 class="mt-3 prof_title">Personal Details</h2>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-lg-4 col-md-4 col-sm-10 col-11">
+            <p class="left_title">Name</p>
+          </div>
+
+          <div class="col-lg-8 col-md-8 col-sm-10 col-11">
+            <p>Rahul Dhakar</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-10 col-11">
+            <p class="left_title">Institute name</p>
+          </div>
+
+          <div class="col-lg-8 col-md-8 col-sm-10 col-11">
+            <p>Indian Institute of Information Technology Vadodara</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-10 col-11">
+            <p class="left_title">Phone number</p>
+          </div>
+
+          <div class="col-lg-8 col-md-8 col-sm-10 col-11">
+            <p>1213456789</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-10 col-11">
+            <p class="left_title">Portfolio link</p>
+          </div>
+
+          <div class="col-lg-8 col-md-8 col-sm-10 col-11">
+            <a href="http://127.0.0.1:5501/SWE%20project/index.html"
+              >profile.html</a
+            >
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-10 col-11">
+            <p class="left_title">Soft Skills</p>
+          </div>
+
+          <div class="col-lg-8 col-md-8 col-sm-10 col-11">
+            <p>Time Management, Teamwork, Interpersonal Skills,Persistence</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-10 col-11">
+            <p class="left_title">Tech Skills</p>
+          </div>
+
+          <div class="col-lg-8 col-md-8 col-sm-10 col-11">
+            <p>C, C++, JAVA, HTML, GitHub, VS Code, Code Blocks</p>
+          </div>
+        </div>
+
+        <div class="row mt-1">
+          <div class="col-12">
+            <p class="left_title">Achievements</p>
+            <ul>
+              <li>
+                Approach To Make As Same As Alexa Product Which Can Recognize
+                Voice
+              </li>
+              <li>
+                Approach To Make As Same As Alexa Product Which Can Recognize
+                Voice
+              </li>
+              <li>
+                Approach To Make As Same As Alexa Product Which Can Recognize
+                Voice
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <p class="left_title">Projects</p>
+            <ul>
+              <li>
+                Approach To Make As Same As Alexa Product Which Can Recognize
+                Voice
+              </li>
+              <li>
+                Approach To Make As Same As Alexa Product Which Can Recognize
+                Voice
+              </li>
+              <li>
+                Approach To Make As Same As Alexa Product Which Can Recognize
+                Voice
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <p class="left_title">Certificates</p>
+            <ul>
+              <li>Solving intermediate level problems in C++, C, Java</li>
+              <li>Solving intermediate level problems in C++, C, Java</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container-fluid">
+        <div class="row mb-5">
+          <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+            <div class="row align-items-center mb-5">
+              <div class="col-xl-7">
+                <h4 class="text-muted mb-4">Recent Activities</h4>
+                <div id="accordion">
+                  <div class="card">
+                    <div class="card-header">
+                      <button
+                        class="btn btn-block bg-secondary text-light text-left"
+                        data-toggle="collapse"
+                        data-target="#collapseOne"
+                      >
+                        <img
+                          src="images/cust1.jpeg"
+                          width="50"
+                          class="mr-3 rounded"
+                        />
+                        Ayush posted a new comment
+                      </button>
+                    </div>
+                    <div
+                      class="collapse show"
+                      id="collapseOne"
+                      data-parent="#accordion"
+                    >
+                      <div class="card-body">Study Hard Break it!</div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header">
+                      <button class="btn btn-block bg-secondary text-light text-left"data-toggle="collapse" data-target="#collapseTwo" >
+                        <img src="images/cust2.jpeg" width="50"  class="mr-3 rounded"/>
+                        Om posted a new comment
+                      </button>
+                    </div>
+                    <div class="collapse" id="collapseTwo" data-parent="#accordion" >
+                      <div class="card-body"> Day and Night all time code it! </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header">
+                      <button class="btn btn-block bg-secondary text-light text-left"  data-toggle="collapse" data-target="#collapseThree">
+                        <img src="images/cust3.jpeg" width="50" class="mr-3 rounded" />Shashwat posted a new comment
+                      </button>
+                    </div>
+                    <div class="collapse" id="collapseThree"  data-parent="#accordion" >
+                      <div class="card-body">The story is all about "I".</div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header">
+                      <button class="btn btn-block bg-secondary text-light text-left"  data-toggle="collapse" data-target="#collapseFour" >
+                    <img src="images/cust4.jpeg"  width="50" class="mr-3 rounded" /> Rahul posted a new comment </button>
+                    </div>
+                    <div class="collapse" id="collapseFour" data-parent="#accordion">
+                      <div class="card-body">I don't know ,not possible?</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-5 mt-5">
+                <div class="card rounded">
+                  <div class="card-body">
+                    <h4 class="text-muted text-center mb-4"> Add a Public Comment </h4>
+
+                    <form>
+                      <div class="form-group">
+                        <input type="text" class="form-control py-3 mb-3" placeholder="" />
+                        <button type="button" class=" btn btn-block text-uppercase font-weight-bold text-light bg-dark py-2 mb-5 " > Post Comment </button>
+                      </div>
+                    </form>
+
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="card bg-light">
+                          <i class="far fa-calendar-alt fa-8x  text-warning d-block  mx-auto  py-3"></i>
+                          <p class="card-text text-center font-weight-bold text-uppercase ">  Mon, Nov 1 </p>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="card bg-light">
+                          <i class=" far fa-clock fa-8x text-danger d-block mx-auto py-3" ></i>
+                          <p class=" card-texttext-center font-weight-bold text-uppercase">3:00pm</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--end of recent activities / comment form-->
+
+    <!--footer-->
+    <%- include('partials/dash_footer') %>

@@ -1,0 +1,166 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #eee;
+}
+
+.card-body1 {
+  margin-left: 50%;
+  margin-right: 50%;
+  margin-top: 50px;
+  margin-bottom: auto;
+  width: 100%;
+  padding: 10px;
+}
+
+.card-header {
+  margin-left: 0%;
+  margin-right: 0%;
+  /* margin-top: auto;
+  margin-bottom: auto; */
+  width: 175%;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.add_app {
+  position: absolute;
+  right: -10px;
+}
+
+.prof {
+  margin-top: 80px;
+}
+
+
+
+.prof_title {
+  text-align: center;
+  font-weight: bold;
+}
+
+/*sidebar*/
+.sidebar {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+    url(images/dash_theme.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-box-shadow: 5px 7px 25px #999999;
+  -moz-box-shadow: 5px 7px 25px #999999;
+  box-shadow: 5px 7px 25px #999999;
+}
+.bottom-border {
+  border-bottom: 1px groove #eee;
+}
+.sidebar-link {
+  transition: all 0.4s;
+}
+.sidebar-link:hover {
+  background-color: #444;
+  border-radius: 5px;
+}
+.current {
+  background-color: #f44336;
+  border-radius: 7px;
+  -webkit-box-shadow: 2px 5px 10px #111;
+  -moz-box-shadow: 2px 5px 10px #111;
+  box-shadow: 2px 5px 10px #111;
+  transition: all 0.3s;
+}
+.current:hover {
+  background-color: #f66436;
+  -webkit-box-shadow: 2px 5px 20px #111;
+  -moz-box-shadow: 2px 5px 20px #111;
+  box-shadow: 2px 5px 20px #111;
+  transform: translateY(-1px);
+}
+/*end of sidebar*/
+
+/*navbar*/
+/* .search-input {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid #999;
+  transition: all 0.4s;
+}
+.search-input:focus {
+  background: transparent;
+  box-shadow: none;
+  border-bottom: 2px solid #dc3545;
+}
+.search-button {
+  border-radius: 50%;
+  padding: 10px 16px;
+  transition: all 0.4s;
+}
+.search-button:hover {
+  background-color: #eee;
+  transform: translateY(-1px);
+} */
+.icon-parent {
+  position: relative;
+}
+.icon-bullet:after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 15px;
+  height: 12px;
+  width: 12px;
+  background-color: #f44336;
+  border-radius: 50%;
+}
+@media (max-width: 768px) {
+  .sidebar {
+    position: static;
+    height: auto;
+  }
+  .top-navbar {
+    position: static;
+  }
+}
+/*end of sidebar*/
+
+/*Cards*/
+.card-common {
+  box-shadow: 1px 2px 5px #999;
+  transition: all 0.4s;
+}
+.card-common:hover {
+  box-shadow: 2px 3px 15px #999;
+  transform: translateY(-1px);
+}
+/*End of Cards*/
+
+/*Tasks*/
+.task-border {
+  border-left: 3px solid #f66436;
+}
+/*End of Tasks*/
+
+/* Personal detail card */
+.details {
+  margin-left: 500px;
+  margin-right: 50%;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.mycontainer {
+  background-color: white;
+  box-shadow: 0px 5px 50px rgba(0, 0, 0, 0.1);
+  padding: 12px 33px;
+  border-radius: 12px;
+}
+
+.left_title {
+  font-weight: 700;
+}
+
+.trademark {
+  text-align: center;
+}
