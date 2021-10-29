@@ -10,11 +10,6 @@ body {
   top: 0px;
 }
 
-#title {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
 
 .homeimg {
   width: 100%;
@@ -46,8 +41,3 @@ body {
   height: 100%;
   width: auto;
 }
-
-
-
-
-
