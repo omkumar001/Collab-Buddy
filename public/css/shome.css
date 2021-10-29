@@ -10,9 +10,23 @@ body {
   background-size: 100% 100%;
 }
 
+
 /* body {
   background-color: #4e4e4e;
 } */
+
+.tagline {
+  font-size: 3em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  margin-top: -30px;
+  margin-bottom: 120px;
+
+  font-weight: 500;
+  color: antiquewhite;
+}
 
 .logo {
   color: white;
@@ -33,6 +47,7 @@ body {
   width: 30rem;
   background: #57bd84;
   border-radius: 0.7rem;
+  margin-top: -250px;
 }
 
 .input,
@@ -45,7 +60,7 @@ body {
 }
 input[type="search"] {
   outline: 0;
-  width: 100%;
+  width: 110%;
   background: #fff;
   padding: 0 1.6rem;
   border-radius: 0.7rem;
@@ -71,4 +86,23 @@ input:not(:placeholder-shown) {
 }
 .submit {
   display: block;
+}
+
+.icon-parent {
+  position: relative;
+}
+.icon-bullet:after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 15px;
+  height: 12px;
+  width: 12px;
+  background-color: #f44336;
+  border-radius: 50%;
+}
+
+
+.nav{
+  margin: 0%;
 }
