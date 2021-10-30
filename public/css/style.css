@@ -10,7 +10,6 @@ body {
   top: 0px;
 }
 
-
 .homeimg {
   width: 100%;
 }
@@ -40,4 +39,53 @@ body {
   font-size: 25px;
   height: 100%;
   width: auto;
+}
+
+.title-brand {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.9em;
+}
+
+.icon-parent {
+  position: relative;
+}
+.icon-bullet:after {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 15px;
+  height: 12px;
+  width: 12px;
+  background-color: #f44336;
+  border-radius: 50%;
+}
+
+.sbar {
+  margin-left: 30px;
+}
+
+.card-deck {
+  margin: 80px 30px;
+  margin-top: 20px;
+}
+
+.result-his {
+  margin: 30px;
+  margin-left: 50px;
+  margin-bottom: 10px;
+}
+
+.nav-custom {
+  padding: 20px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  height: 60px;
+}
+
+.sen-request {
+  float: right;
+}
+
+.fas {
+  color: #ffa62b;
 }

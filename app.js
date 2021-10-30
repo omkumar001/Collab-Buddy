@@ -69,25 +69,25 @@ app.get("/shome", function (req, res) {
   res.render("shome");
 });
 
-app.get("/shome", function (req, res) {
-    res.render("shome");
-  });
+app.get("/sresult", function (req, res) {
+  res.render("sresult");
+});
 
-  app.get("/profile", function (req, res) {
-    res.render("profile");
-  });
+app.get("/profile", function (req, res) {
+  res.render("profile");
+});
 
-  app.post("/profile", function (req, res) {
-    res.redirect("/");
-  });
+app.post("/profile", function (req, res) {
+  res.redirect("/");
+});
 
-  app.get("/application", function (req, res) {
-    res.render("application");
-  });
+app.get("/application", function (req, res) {
+  res.render("application");
+});
 
-  app.post("/application", function (req, res) {
-    res.redirect("/");
-  });
+app.post("/application", function (req, res) {
+  res.redirect("/");
+});
 
 app.listen("3000", function (req, res) {
   console.log("Connected successfully to the server");
