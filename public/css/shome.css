@@ -10,7 +10,6 @@ body {
   background-size: 100% 100%;
 }
 
-
 /* body {
   background-color: #4e4e4e;
 } */
@@ -102,7 +101,47 @@ input:not(:placeholder-shown) {
   border-radius: 50%;
 }
 
-
-.nav{
-  margin: 0%;
+.nav-custom {
+  padding: 767px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: -12%;
+  height: 60px;
 }
+
+.title-brand {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-left: -740px;
+}
+
+.nav-icon {
+  margin-right: -740px;
+}
+
+.logo {
+  margin-top: -350px;
+  margin-bottom: -200px;
+  /* height: 40%;
+  width: 20%; */
+}
+
+.fluid-container {
+  margin-bottom: -150px;
+}
+
+
+.extra{
+  margin-top: 38px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: antiquewhite;
+  
+}
+
+.rounded-bottom{
+  border-radius: 8px;
+}
+

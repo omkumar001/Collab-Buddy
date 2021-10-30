@@ -1,0 +1,129 @@
+<%- include('partials/header') %>
+
+<body>
+        <!-- Navbar content -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-custom">
+
+        <a class="navbar-brand title-brand" href="/">Collab Buddy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+          <form class="form-inline my-2 my-lg-0 sbar" action="/sresult">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+
+         
+            <ul class="navbar-nav ml-auto mt-2  float-lg-right">
+  
+                <li class="nav-item icon-parent">
+                  <a href="/profile" class="nav-link ">
+                    <i class="far fa-user-circle fa-lg"></i> 
+                  </a>
+                </li>
+    
+                <li class="nav-item icon-parent">
+                  <a  class="nav-link icon-bullet" data-target="#">
+                    <i class="fas fa-bell text-muted fa-lg"></i>
+                  </a>
+                </li>
+    
+                <li class="nav-item icon-parent ">
+                  <a href="#" class="nav-link" data-toggle="modal"  data-target="#sign-out" >
+                    <i class="fas fa-sign-out-alt text-danger fa-lg"></i>
+                  </a>
+                </li>
+              </ul>
+          
+        </div>
+      </nav>
+     
+
+      <!--modal-->
+    <div class="modal fade" id="sign-out">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Want to Leave</h4>
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+            <div class="modal-body">Click on Logout to leave</div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" data-dismiss="modal">
+                Stay Here
+              </button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div> 
+       
+     <div class="result-his" >
+      <h3>Result for "Web Dev"</h3>
+      <small class="text-muted">Search insted for ML</small>
+    </div>
+   
+      <% for(var i=0;i<3;i++) {  %>
+    <div class="card-deck ">
+        <div class="card">
+          <img class="card-img-top" src="../images/pro1.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Punit Taneja</h5>
+            <p class="card-text">Specialization in Frontend and Backend . Experience of Saas and Iaas enviroment .</p>
+            <i class="fas fa-star"> 5.0 </i> <small class="text-muted"> (5)</small>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Available <button type="button" class="btn btn-outline-success sen-request">Send Request</button></small>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="../images/pro2.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Avantika Jha</h5>
+            <p class="card-text">Specialization in Frontend and Backend . Experience of Saas and Iaas enviroment .</p>
+            <i class="fas fa-star"> 5.0</i> <small class="text-muted"> (23)</small>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Not Available <button type="button" class="btn btn-outline-success sen-request " disabled>Send Request</button></small>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="../images/pro3.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Nimish Singh</h5>
+            <p class="card-text">Specialization in Frontend and Backend . Experience of Saas and Iaas enviroment .</p>
+            <i class="fas fa-star-half-alt"> 2.5 </i>  <small class="text-muted"> (13)</small>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Available <button type="button" class="btn btn-outline-success sen-request">Send Request</button></small>
+          </div>
+        </div>
+
+        <div class="card">
+            <img class="card-img-top" src="../images/pro1.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Ansh Ranjan</h5>
+              <p class="card-text">Specialization in Frontend and Backend . Experience of Saas and Iaas enviroment .</p>
+              <i class="fas fa-star-half-alt"> 3.5</i> <small class="text-muted"> (15)</small>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Not Available <button type="button" class="btn btn-outline-success sen-request " disabled>Send Request</button></small>
+            </div>
+          </div>
+    </div>
+   <%  } %>
+   
+
+      <%- include('partials/footer') %>
+
+      <script >
+        $(document).ready(function () { $('[data-toggle="tooltip"]').tooltip()});
+    </script>
+</body>
