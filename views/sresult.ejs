@@ -69,57 +69,49 @@
       <h3>Result for "Web Dev"</h3>
       <small class="text-muted">Search insted for ML</small>
     </div>
+     
    
-      <% for(var i=0;i<3;i++) {  %>
-    <div class="card-deck ">
+    
+
+    <div class="row card-deck">
+      <% for(var i=0;i<10;i++) {  %>
+      
+      <div class="col-lg-4 design ">
         <div class="card">
           <img class="card-img-top" src="../images/pro1.png" alt="Card image cap">
+         
           <div class="card-body">
             <h5 class="card-title">Punit Taneja</h5>
             <p class="card-text">Specialization in Frontend and Backend . Experience of Saas and Iaas enviroment .</p>
             <i class="fas fa-star"> 5.0 </i> <small class="text-muted"> (5)</small>
           </div>
-          <div class="card-footer">
-            <small class="text-muted">Available <button type="button" class="btn btn-outline-success sen-request">Send Request</button></small>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="../images/pro2.png" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Avantika Jha</h5>
-            <p class="card-text">Specialization in Frontend and Backend . Experience of Saas and Iaas enviroment .</p>
-            <i class="fas fa-star"> 5.0</i> <small class="text-muted"> (23)</small>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Not Available <button type="button" class="btn btn-outline-success sen-request " disabled>Send Request</button></small>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="../images/pro3.png" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Nimish Singh</h5>
-            <p class="card-text">Specialization in Frontend and Backend . Experience of Saas and Iaas enviroment .</p>
-            <i class="fas fa-star-half-alt"> 2.5 </i>  <small class="text-muted"> (13)</small>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">Available <button type="button" class="btn btn-outline-success sen-request">Send Request</button></small>
-          </div>
-        </div>
 
-        <div class="card">
-            <img class="card-img-top" src="../images/pro1.png" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Ansh Ranjan</h5>
-              <p class="card-text">Specialization in Frontend and Backend . Experience of Saas and Iaas enviroment .</p>
-              <i class="fas fa-star-half-alt"> 3.5</i> <small class="text-muted"> (15)</small>
-            </div>
-            <div class="card-footer">
-              <small class="text-muted">Not Available <button type="button" class="btn btn-outline-success sen-request " disabled>Send Request</button></small>
-            </div>
+          <div class="card-footer">
+            <small class="text-muted">Available <button type="button" class="btn btn-outline-success sen-request">Send Request</button></small>
           </div>
-    </div>
-   <%  } %>
+
+        </div>
+      </div>
    
+      <%  } %>
+    </div>
+    
+
+     
+    <!-- <div class="card-deck">
+        <div class="card ">
+
+        
+
+          
+
+        </div> 
+      </div> -->
+
+
+
+   
+    
 
       <%- include('partials/footer') %>
 

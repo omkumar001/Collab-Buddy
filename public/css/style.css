@@ -69,10 +69,14 @@ body {
   margin-top: 20px;
 }
 
+.design {
+  margin-bottom: 40px;
+}
+
 .result-his {
   margin: 30px;
   margin-left: 50px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .nav-custom {
