@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const app = express();
 const bodyparser = require("body-parser");
@@ -5,6 +6,8 @@ const ejs = require("ejs");
 const bcrypt = require("bcryptjs");
 const session = require("express-session");
 const MongoDBSession = require("connect-mongodb-session")(session);
+const nodemailer = require("nodemailer");
+
 
 app.use(express.static(__dirname + "/public"));
 app.use(express.static(__dirname + "/uploads"));
@@ -20,10 +23,10 @@ app.use(
 const BuddyModel = require("./models/Buddy");
 const BuddyApplication = require("./models/BuddyApplication");
 
-const mongoURI = "mongodb://localhost:27017/buddyDB";
+const mongoURI = "mongodb+srv://ayush:123@cluster0.kah3v.mongodb.net/buddyDB?retryWrites=true&w=majority"
 
 mongoose
-  .connect("mongodb://localhost:27017/buddyDB", {
+  .connect(mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -64,7 +67,7 @@ app.get("/login", function (req, res) {
   res.render("login");
 });
 app.get("/register", function (req, res) {
-  res.render("register");
+  res.render("login");
 });
 
 app.post("/register", async function (req, res) {
@@ -89,7 +92,7 @@ app.post("/register", async function (req, res) {
 
       res.redirect("/login");
     } else if ((er.code = 11000)) {
-      res.render("register", {
+      res.render("login", {
         dup: false,
       });
     }
@@ -110,7 +113,7 @@ app.post("/login", async function (req, res) {
   if (!isMatch) res.redirect("/login");
 
   req.session.isAuth = true;
-  req.session.cookie.expires = new Date(Date.now() + 120 * 1000);
+  req.session.cookie.expires = new Date(Date.now() + 3600 * 1000);
 
   buddy.sessionID = req.session.id;
   buddy.save();
@@ -118,7 +121,7 @@ app.post("/login", async function (req, res) {
   res.redirect("/shome");
 });
 
-app.get("/dashboard", isAuth, async function (req, res) {
+app.get("/shome", isAuth, async function (req, res) {
   const budd = await BuddyModel.findOne({ sessionID: req.session.id });
   if (budd) {
     res.render("shome", {
@@ -127,20 +130,27 @@ app.get("/dashboard", isAuth, async function (req, res) {
   }
 });
 
-app.get("/search", (req, res) => {
+app.get("/search", async (req,res) => {
   try {
+
+    const buddy = await BuddyModel.findOne({ sessionID: req.session.id });
     BuddyApplication.find(
       {
         $or: [
-          { fullname: { $regex : req.query.dsearch } },
-          { specialization :{ $regex : req.query.dsearch } } 
+          { fullname: { $regex: req.query.dsearch } },
+          { specialization: { $regex: req.query.dsearch } },
         ],
       },
       (err, data) => {
         if (err) {
           console.log(err);
         } else {
-          res.render("dashboard", { data: data });
+          res.render("sresult", { data: data ,
+          searchdata:req.query.dsearch,
+          buddyusername:buddy.username
+
+        });
+        //  console.log(data);
         }
       }
     );
@@ -149,15 +159,114 @@ app.get("/search", (req, res) => {
   }
 });
 
-app.get("/",  function (req, res) {
-  if(req.session.isAuth)
-  {
+app.get("/", function (req, res) {
+  if (req.session.isAuth) {
     res.redirect("/shome");
- 
   }
-res.render("home");
-
+  res.render("home");
 });
+app.get("/logout", async function (req, res) {
+    const buddy = await BuddyModel.findOne({ sessionID: req.session.id });
+     
+    buddy.sessionID="null";
+    buddy.save(function(e)
+    {
+        if(!e)
+        console.log("Logged out");
+    });
+
+  req.session.destroy((err) => {
+    if (err) throw err;
+    res.redirect("/");
+  });
+});
+
+app.get("/myprofile", async function (req, res) {
+  const buddy = await BuddyModel.findOne({ sessionID: req.session.id });
+
+  // console.log(req.session.id);
+  //  console.log(buddy);
+  const bud = await BuddyApplication.findOne({ myemail: buddy.email });
+  res.render("myprofile", {
+    buddata: bud,
+  });
+});
+app.get("/myapplication", async function (req, res) {
+  res.render("myapplication");
+});
+
+app.post("/myapplication", async function (req, res) {
+  const budd = await BuddyModel.findOne({ sessionID: req.session.id });
+  //console.log(budd.email);
+
+  const newApplication = new BuddyApplication({
+    myemail: budd.email,
+    fullname: req.body.fullname,
+    institutename: req.body.institutename,
+    portfolios: req.body.portfolios,
+    contactno: req.body.contactno,
+    achievements: req.body.achievements,
+    projects: req.body.projects,
+    techskills: req.body.tech_skill,
+    softskills: req.body.soft_skill,
+    workshops: req.body.workshops,
+    certifications: req.body.certifications,
+    rating: "0",
+    specialization: req.body.specialization,
+  });
+  await newApplication.save(function (err) {
+    if (!err) {
+      console.log("Application Saved");
+      res.redirect("/myprofile");
+    } else console.log(err);
+  });
+});
+
+app.get("/bud/:myemail",async function(req,res)
+{
+    const fullprofile=await BuddyApplication.findOne({myemail:req.params.myemail});
+    res.render("showprofile",
+    {
+        dataa:fullprofile
+    })
+});
+
+app.get("/sendrequest/:myemail/:buddyusername",async function(req,res)
+{
+  const buddy = await BuddyModel.findOne({ sessionID: req.session.id });
+   
+
+async function main() {
+  let testAccount = await nodemailer.createTestAccount();
+
+  
+  let transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false, // true for 465, false for other ports
+    auth: {
+      user: process.env.MAIL_USER, // generated ethereal user
+      pass: process.env.MAIL_PASS, // generated ethereal password
+    },
+  });
+
+  let info = await transporter.sendMail({
+    from: buddy.email, // sender address
+    to: req.params.myemail, // list of receivers
+    subject: "Invite for Contribution in Project", // Subject line
+    text: "Hi there, the user "+req.params.buddyusername+" wants to invite you for your collaboration on the project. Kindly visit websitename and confirm your availability.",
+  });
+     if(info.messageId)
+     console.log("Email sent");
+     else
+     console.log("error");
+  console.log("Message sent: %s", info.messageId);
+  }
+
+main().catch(console.error);
+    
+  });
+
 
 app.listen("3000", function (req, res) {
   console.log("Connected successfully to the server");

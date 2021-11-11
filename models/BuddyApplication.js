@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const buddyapplicationSchema = new Schema({
-  email: {
+  myemail: {
     type: String,
   },
   fullname: {
@@ -43,6 +43,11 @@ const buddyapplicationSchema = new Schema({
   },
   comments: [String],
   commentBy: [String],
-  specialization: String 
+  specialization: 
+  {
+      type:String
+  },
+  availability : Boolean,
+  count: Number
 });
 module.exports = mongoose.model("BuddyApplication", buddyapplicationSchema);
