@@ -31,12 +31,12 @@
                             </div>
                             <ul class="navbar-nav flex-column mt-2">
                                 <li class="nav-item">
-                                    <a href="/profile" class="nav-link text-white p-2 mb-2 sidebar-link">
+                                    <a href="/myprofile" class="nav-link text-white p-2 mb-2 sidebar-link">
                                         <i class="fas fa-home text-light fa-lg mr-3"></i> My Profile
                                     </a>
                                 </li>
                                  <li class="nav-item">
-                                    <a href="/application" class="nav-link text-white p-2 mb-2 current">  <i class="fas fa-user text-light fa-lg mr-3"></i>My Application </a>
+                                    <a href="/myapplication" class="nav-link text-white p-2 mb-2 current">  <i class="fas fa-user text-light fa-lg mr-3"></i>My Application </a>
                                 </li>
 
                             </ul>
@@ -59,11 +59,11 @@
                                             </a>
                                           </li>
 
-                                        <li class="nav-item icon-parent">
+                                        <!-- <li class="nav-item icon-parent">
                                             <a href="#" class="nav-link icon-bullet">
                                                 <i class="fas fa-bell text-muted fa-lg"></i>
                                             </a>
-                                        </li>
+                                        </li> -->
                                         <li class="nav-item icon-parent ">
                                             <a href="#" class="nav-link" data-toggle="modal" data-target="#sign-out">
                                                 <i class="fas fa-sign-out-alt text-danger fa-lg"></i>
@@ -93,7 +93,9 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-success" data-dismiss="modal">Stay Here</button>
-                        <button type="button"  class="btn btn-danger" data-dismiss="modal">Logout</button>
+                        <form action="/logout" method="get">
+                            <button type="submit" class="btn btn-danger">Logout</button>
+                           </form>
                     </div>
                 </div>
             </div>

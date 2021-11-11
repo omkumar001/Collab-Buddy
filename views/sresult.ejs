@@ -11,25 +11,29 @@
       
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 
-          <form class="form-inline my-2 my-lg-0 sbar" action="/sresult">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+          <form class="form-inline my-2 my-lg-0 sbar" action="/search" method="get">
+            <input name="dsearch" class="form-control mr-sm-2" type="search" placeholder="Search">
+            <button   class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
           </form>
 
          
             <ul class="navbar-nav ml-auto mt-2  float-lg-right">
   
                 <li class="nav-item icon-parent">
-                  <a href="/profile" class="nav-link ">
+                  <a href="/myprofile" class="nav-link ">
+
                     <i class="far fa-user-circle fa-lg"></i> 
                   </a>
                 </li>
     
-                <li class="nav-item icon-parent">
+                <!-- <li class="nav-item icon-parent">
                   <a  class="nav-link icon-bullet" data-target="#">
                     <i class="fas fa-bell text-muted fa-lg"></i>
                   </a>
-                </li>
+                </li> -->
+
     
                 <li class="nav-item icon-parent ">
                   <a href="#" class="nav-link" data-toggle="modal"  data-target="#sign-out" >
@@ -57,33 +61,68 @@
               <button type="button" class="btn btn-success" data-dismiss="modal">
                 Stay Here
               </button>
-              <button type="button" class="btn btn-danger" data-dismiss="modal">
-                Logout
-              </button>
+
+              <form action="/logout" method="get">
+                <button type="submit" class="btn btn-danger">Logout</button>
+               </form>
+
             </div>
           </div>
         </div>
       </div> 
        
      <div class="result-his" >
-      <h3>Result for "Web Dev"</h3>
-      <small class="text-muted">Search insted for ML</small>
+
+      <h3>Result for "<%=searchdata%>"</h3>
+
     </div>
+     
+  <%  if(data.length==0) {%>
+    <div class="result-his" >
+      <br><br><h5>No results found for "<%=searchdata%>"</h5>
+      </div>
+   <% } %>
    
-      <% for(var i=0;i<3;i++) {  %>
-    <div class="card-deck ">
-        <div class="card">
+    <div class="row card-deck">
+      <% for(var i=0;i<data.length;i++) {  %>
+      
+      <div class="col-lg-3 design ">
+        <a href="/bud/<%=data[i].myemail%>" text-decoration="none"><div class="card">
+          <img class="card-img-top" src="../images/pro1.png" alt="Card image cap">
+         
+          <div class="card-body">
+            <h5 class="card-title"><%=data[i].fullname%></h5>
+            <p class="card-text">Specialization in <%=data[i].specialization%>.</p>
+            <i class="fas fa-star"> 0.0 </i> <small class="text-muted"> (5)</small>
+          </div>
+
+          <div class="card-footer">
+            <small class="text-muted">Available <a href="/sendrequest/<%=data[i].myemail%>/<%=buddyusername%>"> <button type="button" class="btn btn-outline-success sen-request ">Send Request</button> </a></small>
+          </div>
+
+        </div> </a>
+      </div>
+   
+      <%  } %>
+    </div> 
+    <!-- <div class="card-deck">
+
+      <% for(var i=0;i<data.length;i++) {  %>
+       <a href="/bud/<%=data[i].myemail%>" text-decoration="none"> <div class="card">
+         
           <img class="card-img-top" src="../images/pro1.png" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Punit Taneja</h5>
-            <p class="card-text">Specialization in Frontend and Backend . Experience of Saas and Iaas enviroment .</p>
-            <i class="fas fa-star"> 5.0 </i> <small class="text-muted"> (5)</small>
+            <h5 class="card-title"><%=data[i].fullname%></h5>
+            <p class="card-text">Specialization in <%=data[i].specialization%>.</p>
+            <i class="fas fa-star"> 0.0 </i> <small class="text-muted"> (5)</small>
           </div>
-          <div class="card-footer">
-            <small class="text-muted">Available <button type="button" class="btn btn-outline-success sen-request">Send Request</button></small>
+           <div class="card-footer">
+            <small class="text-muted">Available <a href="/sendrequest/<%=data[i].myemail%>"> <button type="button" class="btn btn-outline-success sen-request ">Send Request</button> </a></small>
           </div>
-        </div>
-        <div class="card">
+        </div> </a> -->
+        
+        <!-- <div class="card">
+
           <img class="card-img-top" src="../images/pro2.png" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">Avantika Jha</h5>
@@ -91,7 +130,9 @@
             <i class="fas fa-star"> 5.0</i> <small class="text-muted"> (23)</small>
           </div>
           <div class="card-footer">
-            <small class="text-muted">Not Available <button type="button" class="btn btn-outline-success sen-request " disabled>Send Request</button></small>
+          
+            <small class="text-muted">Not Available  <a href="/sendrequest"> <button type="button" class="btn btn-outline-success sen-request ">Send Request</button> </a></small>
+
           </div>
         </div>
         <div class="card">
@@ -106,6 +147,7 @@
           </div>
         </div>
 
+
         <div class="card">
             <img class="card-img-top" src="../images/pro1.png" alt="Card image cap">
             <div class="card-body">
@@ -116,9 +158,12 @@
             <div class="card-footer">
               <small class="text-muted">Not Available <button type="button" class="btn btn-outline-success sen-request " disabled>Send Request</button></small>
             </div>
-          </div>
-    </div>
-   <%  } %>
+
+           </div> -->
+          <!-- <%  } %> -->
+  <!-- //  </div>  -->
+   
+
    
 
       <%- include('partials/footer') %>
@@ -126,4 +171,7 @@
       <script >
         $(document).ready(function () { $('[data-toggle="tooltip"]').tooltip()});
     </script>
+    
 </body>
+
+
