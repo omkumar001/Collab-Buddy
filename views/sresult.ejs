@@ -11,9 +11,11 @@
       
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 
+
           <form class="form-inline my-2 my-lg-0 sbar" action="/search" method="get">
             <input name="dsearch" class="form-control mr-sm-2" type="search" placeholder="Search">
             <button   class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
           </form>
 
          
@@ -21,6 +23,7 @@
   
                 <li class="nav-item icon-parent">
                   <a href="/myprofile" class="nav-link ">
+
                     <i class="far fa-user-circle fa-lg"></i> 
                   </a>
                 </li>
@@ -30,6 +33,7 @@
                     <i class="fas fa-bell text-muted fa-lg"></i>
                   </a>
                 </li> -->
+
     
                 <li class="nav-item icon-parent ">
                   <a href="#" class="nav-link" data-toggle="modal"  data-target="#sign-out" >
@@ -57,15 +61,18 @@
               <button type="button" class="btn btn-success" data-dismiss="modal">
                 Stay Here
               </button>
+
               <form action="/logout" method="get">
                 <button type="submit" class="btn btn-danger">Logout</button>
                </form>
+
             </div>
           </div>
         </div>
       </div> 
        
      <div class="result-his" >
+
       <h3>Result for "<%=searchdata%>"</h3>
 
     </div>
@@ -115,6 +122,7 @@
         </div> </a> -->
         
         <!-- <div class="card">
+
           <img class="card-img-top" src="../images/pro2.png" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title">Avantika Jha</h5>
@@ -122,7 +130,9 @@
             <i class="fas fa-star"> 5.0</i> <small class="text-muted"> (23)</small>
           </div>
           <div class="card-footer">
+          
             <small class="text-muted">Not Available  <a href="/sendrequest"> <button type="button" class="btn btn-outline-success sen-request ">Send Request</button> </a></small>
+
           </div>
         </div>
         <div class="card">
@@ -136,6 +146,8 @@
             <small class="text-muted">Available <button type="button" class="btn btn-outline-success sen-request">Send Request</button></small>
           </div>
         </div>
+
+
         <div class="card">
             <img class="card-img-top" src="../images/pro1.png" alt="Card image cap">
             <div class="card-body">
@@ -146,10 +158,12 @@
             <div class="card-footer">
               <small class="text-muted">Not Available <button type="button" class="btn btn-outline-success sen-request " disabled>Send Request</button></small>
             </div>
+
            </div> -->
           <!-- <%  } %> -->
   <!-- //  </div>  -->
    
+
    
 
       <%- include('partials/footer') %>
@@ -157,4 +171,7 @@
       <script >
         $(document).ready(function () { $('[data-toggle="tooltip"]').tooltip()});
     </script>
+    
 </body>
+
+

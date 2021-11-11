@@ -70,6 +70,7 @@ app.get("/register", function (req, res) {
   res.render("login");
 });
 
+
 app.post("/register", async function (req, res) {
   const { username, email, password } = req.body;
 
@@ -267,6 +268,27 @@ main().catch(console.error);
     
   });
 
+// =======
+// app.get("/sresult", function (req, res) {
+//   res.render("sresult");
+// });
+
+// app.get("/profile", function (req, res) {
+//   res.render("profile");
+// });
+
+// app.post("/profile", function (req, res) {
+//   res.redirect("/");
+// });
+
+// app.get("/application", function (req, res) {
+//   res.render("application");
+// });
+
+// app.post("/application", function (req, res) {
+//   res.redirect("/");
+// });
+// >>>>>>> master
 
 app.listen("3000", function (req, res) {
   console.log("Connected successfully to the server");
