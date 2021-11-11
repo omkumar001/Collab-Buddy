@@ -61,7 +61,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="/application" class="nav-link text-white p-2 mb-2">
+                  <a href="/myapplication" class="nav-link text-white p-2 mb-2">
                     <i class="fas fa-user text-light fa-lg mr-3"></i>My
                     Application
                   </a>
@@ -87,11 +87,11 @@
                       </a>
                     </li>
 
-                    <li class="nav-item icon-parent">
+                    <!-- <li class="nav-item icon-parent">
                       <a href="#" class="nav-link icon-bullet">
                         <i class="fas fa-bell text-muted fa-lg"></i>
                       </a>
-                    </li>
+                    </li> -->
 
                     <li class="nav-item icon-parent ">
                       <a href="#" class="nav-link" data-toggle="modal"  data-target="#sign-out" >
@@ -127,15 +127,15 @@
             <button type="button" class="btn btn-success" data-dismiss="modal">
               Stay Here
             </button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal">
-              Logout
-            </button>
+            <form action="/logout" method="get">
+              <button type="submit" class="btn btn-danger">Logout</button>
+             </form>
           </div>
         </div>
       </div>
     </div> 
-
-    <div class="prof"></div>
+    
+     
 
     <section class="details mt-4 ">
       <div class="container mycontainer mt-4 ">
@@ -144,6 +144,14 @@
             <h2 class="mt-3 prof_title">Personal Details</h2>
           </div>
         </div>
+        <% if(buddata==null) {%>
+          <h2 class="mt-3 prof_title"></h2>
+        <div class="prof"> No data to be shown</div>
+       <% }  else { %>
+       
+       
+
+     
 
         <div class="row mt-4">
           <div class="col-lg-4 col-md-4 col-sm-10 col-11">
@@ -151,7 +159,7 @@
           </div>
 
           <div class="col-lg-8 col-md-8 col-sm-10 col-11">
-            <p>Rahul Dhakar</p>
+            <p><%=buddata.fullname%></p>
           </div>
         </div>
 
@@ -161,7 +169,7 @@
           </div>
 
           <div class="col-lg-8 col-md-8 col-sm-10 col-11">
-            <p>Indian Institute of Information Technology Vadodara</p>
+            <p><%=buddata.institutename%></p>
           </div>
         </div>
 
@@ -171,7 +179,7 @@
           </div>
 
           <div class="col-lg-8 col-md-8 col-sm-10 col-11">
-            <p>1213456789</p>
+            <p><%=buddata.contactno%></p>
           </div>
         </div>
 
@@ -182,7 +190,7 @@
 
           <div class="col-lg-8 col-md-8 col-sm-10 col-11">
             <a href="http://127.0.0.1:5501/SWE%20project/index.html"
-              >profile.html</a
+              ><%=buddata.portfolios%></a
             >
           </div>
         </div>
@@ -193,7 +201,7 @@
           </div>
 
           <div class="col-lg-8 col-md-8 col-sm-10 col-11">
-            <p>Time Management, Teamwork, Interpersonal Skills,Persistence</p>
+            <p><%=buddata.softskills%></p>
           </div>
         </div>
 
@@ -203,14 +211,14 @@
           </div>
 
           <div class="col-lg-8 col-md-8 col-sm-10 col-11">
-            <p>C, C++, JAVA, HTML, GitHub, VS Code, Code Blocks</p>
+            <p><%=buddata.techskills%></p>
           </div>
         </div>
 
         <div class="row mt-1">
           <div class="col-12">
             <p class="left_title">Achievements</p>
-            <ul>
+            <!-- <ul>
               <li>
                 Approach To Make As Same As Alexa Product Which Can Recognize
                 Voice
@@ -223,14 +231,15 @@
                 Approach To Make As Same As Alexa Product Which Can Recognize
                 Voice
               </li>
-            </ul>
+            </ul> -->
+            <p ><%=buddata.achievements%></p>
           </div>
         </div>
 
         <div class="row">
           <div class="col-12">
             <p class="left_title">Projects</p>
-            <ul>
+            <!-- <ul>
               <li>
                 Approach To Make As Same As Alexa Product Which Can Recognize
                 Voice
@@ -243,21 +252,36 @@
                 Approach To Make As Same As Alexa Product Which Can Recognize
                 Voice
               </li>
-            </ul>
+            </ul> -->
+            <p><%=buddata.projects%></p>
           </div>
         </div>
 
         <div class="row">
           <div class="col-12">
             <p class="left_title">Certificates</p>
-            <ul>
+            <!-- <ul>
               <li>Solving intermediate level problems in C++, C, Java</li>
               <li>Solving intermediate level problems in C++, C, Java</li>
-            </ul>
+            </ul> -->
+            <p><%=buddata.certifications%></p>
           </div>
         </div>
+        <div class="row">
+          <div class="col-12">
+            <p class="left_title">Specialization</p>
+            <!-- <ul>
+              <li>Solving intermediate level problems in C++, C, Java</li>
+              <li>Solving intermediate level problems in C++, C, Java</li>
+            </ul> -->
+            <p><%=buddata.specialization%></p>
+          </div>
+        </div>
+     <% }%>
       </div>
+   
     </section>
+  
 
     <section>
       <div class="container-fluid">

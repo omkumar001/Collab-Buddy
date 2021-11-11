@@ -45,20 +45,34 @@
           <ul class="navbar-nav ml-auto mt-2  nav-icon float-lg-right">
 
               <li class="nav-item icon-parent">
-                <a href="/profile" class="nav-link ">
+
+                <a  name="myprofile" href="/myprofile" class="nav-link ">
+
                   <i class="far fa-user-circle fa-lg"></i> 
                 </a>
               </li>
   
-              <li class="nav-item icon-parent">
+//<<<<<<< AyushBranch
+              <!-- <li class="nav-item icon-parent">
                 <a  class="nav-link icon-bullet" data-target="#">
                   <i class="fas fa-bell text-muted fa-lg"></i>
                 </a>
-              </li>
+              </li> -->
   
               <li class="nav-item icon-parent ">
-                <a href="#" class="nav-link" data-toggle="modal"  data-target="#sign-out" >
-                  <i class="fas fa-sign-out-alt text-danger fa-lg"></i>
+                <a  href="#" class="nav-link" data-toggle="modal"  data-target="#sign-out" >
+                  <i  name="logout" class="fas fa-sign-out-alt text-danger fa-lg"></i>
+//=======
+           //   <li class="nav-item icon-parent">
+           //     <a  class="nav-link icon-bullet" data-target="#">
+                  <i class="fas fa-bell text-muted fa-lg"></i>
+           //     </a>
+           //   </li>
+  
+           //   <li class="nav-item icon-parent ">
+            //    <a href="#" class="nav-link" data-toggle="modal"  data-target="#sign-out" >
+            //      <i class="fas fa-sign-out-alt text-danger fa-lg"></i>
+//>>>>>>> master
                 </a>
               </li>
             </ul>
@@ -82,9 +96,9 @@
             <button type="button" class="btn btn-success" data-dismiss="modal">
               Stay Here
             </button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal">
-              Logout
-            </button>
+            <form action="/logout" method="get">
+              <button type="submit" class="btn btn-danger">Logout</button>
+             </form>
           </div>
         </div>
       </div>
@@ -97,12 +111,15 @@
     <!-- <h1 class="tagline">Find the perfect buddy for your project here.</h1> -->
 
     <div class="fluid-container">
-      <form class="form" action="/sresult" role="search">
+    
+      <form class="form" action="/search" role="search" method="get">
+
         <input
           class="input"
-          id="search"
+          id="dsearch"
+          name="dsearch"
           type="search"
-          placeholder="Search for the profile ..."
+          placeholder="Search for the profile/specialization ..."
           autofocus="required"
         />
         <button class="submit" type="submit">Go</button>

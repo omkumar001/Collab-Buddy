@@ -23,8 +23,10 @@ body {
 }
 
 .add_app {
-  position: absolute;
+  position: center;
   right: -10px;
+  margin-left: 20px;
+
 }
 
 .prof {

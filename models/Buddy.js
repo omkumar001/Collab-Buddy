@@ -2,8 +2,7 @@ const mongoose=require("mongoose");
 const Schema=mongoose.Schema;
 
 const buddySchema= new Schema({
-      
-    username:
+      username:
     {
         type : String,
         required: true,

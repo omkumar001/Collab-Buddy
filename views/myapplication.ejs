@@ -12,23 +12,18 @@
                     <div class="card-header"> My Application  </div>
                       
                     <div class="card-body1">
-                        <form action="#" method="">
+                        <form action="/myapplication" method="post">
 
-
+                            
                              <div class="form-row  mb-3 col-lg-18">
                                     <!-- Name -->
                                     <div class="col col-lg-6">
                                         <label for="">Full Name  :  </label>
-                                        <input type="text" placeholder="Enter your full name .." autofocus required="true"> 
+                                        <input  name="fullname" type="text" placeholder="Enter your full name .." autofocus required="true"> 
                                         <br>
                                     </div>
                                     
-                                    <!-- Email -->
-                                    <div class="col col-lg-6 ">
-                                        <label for="">Email Id : </label>
-                                        <input type="text" placeholder="xyz@gmail.com" autofocus required="true"> 
-                                        <br>
-                                    </div>
+                                 
 
                                     </div>
                                    
@@ -37,14 +32,14 @@
                                      <!-- Institue Name -->
                                     <div class="col col-lg-6 ">
                                         <label for="">University : </label>
-                                        <input type="text" placeholder="Institute / University" autofocus required="true"> 
+                                        <input type="text" placeholder="Institute / University" name="institutename" autofocus required="true"> 
                                         <br>
                                     </div>
 
                                      <!-- Portfolio Link -->
                                      <div class="col col-lg-6 ">
                                         <label for="">Portfolio : </label>
-                                        <input type="text" placeholder="Portfolio link.." autofocus > 
+                                        <input type="text" placeholder="Portfolio link.." name="portfolios" autofocus > 
                                         <br>
                                     </div>
 
@@ -54,16 +49,26 @@
                              <div class="form-row  mb-3 col-lg-18">
                              <div class="col col-lg-7">
                                 <label for="">Contact No. : </label>
-                                <input type="tel" placeholder="+91-XXXXXXXXXX" autofocus required="true"> 
+                                <input type="tel" placeholder="+91-XXXXXXXXXX" name="contactno" autofocus required="true"> 
                                 <br>
                             </div>
                         </div>
+
+                         <!-- Specialization -->
+                        <div class="form-row  mb-3 col-lg-18">
+                            <div class="col col-lg-7">
+                               <label for="">Specialization </label>
+                               <input type="text" placeholder="eg. Web Development,ML" name="specialization" autofocus required="true"> 
+                               <br>
+                           </div>
+                       </div>
+
 
                                     <!-- Tech skills -->
                                     <div class="form-row mb-3">
                                         <div class="col">
                                             <label for="">Tech Skills :</label>
-                                            <textarea rows = "2" cols = "70" name = "tech_skill" placeholder="List your tech skills here .." autofocus required="true"> </textarea>
+                                            <textarea rows = "5" cols = "70" name = "tech_skill" placeholder="List your tech skills here .." autofocus required="true"> </textarea>
                                         </div>
                                         <br>
                                     </div>
@@ -73,7 +78,7 @@
                                     <div class="form-row mb-4" >
                                         <div class="col ml-auto ">
                                         <label for="">Achievements : </label>
-                                        <textarea rows = "2" cols = "70" name = "achievements"  placeholder="Enter your achievements here .." autofocus required="true"> </textarea>
+                                        <textarea rows = "5" cols = "70" name = "achievements"  placeholder="Enter your achievements here .." autofocus required="true"> </textarea>
                                     </div>
                                      <br>
                                     </div>
@@ -82,7 +87,7 @@
                                     <div class="form-row mb-3">
                                         <div class="col">
                                             <label for="">Projects : </label>
-                                            <textarea rows = "2" cols = "70" name = "project" placeholder="List your projects here .." autofocus required="true"> </textarea>
+                                            <textarea rows = "4" cols = "70" name = "projects" placeholder="List your projects here .." autofocus required="true"> </textarea>
                                         </div>
                                         <br>
                                     </div>
@@ -90,8 +95,16 @@
                                     <!-- certificates -->
                                     <div class="form-row mb-3">
                                         <div class="col">
-                                            <label for="">Certification :</label>
-                                            <textarea rows = "2" cols = "70" name = "certificates" placeholder="List your Certificates here .." autofocus required="true"> </textarea>
+                                            <label for="">Certifications :</label>
+                                            <textarea rows = "4" cols = "70" name = "certifications" placeholder="List your Certificates here .." autofocus required="true"> </textarea>
+                                        </div>
+                                        <br>
+                                    </div>
+
+                                    <div class="form-row mb-3">
+                                        <div class="col">
+                                            <label for="">Workshops :</label>
+                                            <textarea rows = "4" cols = "70" name = "workshops"  autofocus required="true"> </textarea>
                                         </div>
                                         <br>
                                     </div>
@@ -100,13 +113,13 @@
                                      <div class="form-row mb-3">
                                         <div class="col">
                                             <label for="">Soft Skills :</label>
-                                            <textarea rows = "1" cols = "70" name = "soft_skill" placeholder="List your soft skills here .." autofocus required="true"> </textarea>
+                                            <textarea rows = "4" cols = "70" name = "soft_skill" placeholder="List your soft skills here .." autofocus required="true"> </textarea>
                                         </div>
                                         <br>
                                     </div>
 
                                 <br>
-                                <button type="submit" class="btn btn-dark add_app">Add</button>
+                                <button type="submit" class="btn btn-dark add_app btn-block">Add</button>
 
                             </form>
 
