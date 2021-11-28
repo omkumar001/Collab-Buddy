@@ -23,7 +23,7 @@ app.use(
 const BuddyModel = require("./models/Buddy");
 const BuddyApplication = require("./models/BuddyApplication");
 
-const mongoURI = "mongodb+srv://ayush:123@cluster0.kah3v.mongodb.net/buddyDB?retryWrites=true&w=majority"
+const mongoURI = "<MONGODB URI>?retryWrites=true&w=majority"
 
 mongoose
   .connect(mongoURI, {
