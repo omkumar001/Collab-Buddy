@@ -114,7 +114,7 @@ app.post("/login", async function (req, res) {
   if (!isMatch) res.redirect("/login");
 
   req.session.isAuth = true;
-  req.session.cookie.expires = new Date(Date.now() + 3600 * 1000);
+  req.session.cookie.expires = new Date(Date.now() + 360000 * 1000);
 
   buddy.sessionID = req.session.id;
   buddy.save();
@@ -135,6 +135,7 @@ app.get("/search", async (req,res) => {
   try {
 
     const buddy = await BuddyModel.findOne({ sessionID: req.session.id });
+    // console.log(buddy);
     BuddyApplication.find(
       {
         $or: [
@@ -148,7 +149,7 @@ app.get("/search", async (req,res) => {
         } else {
           res.render("sresult", { data: data ,
           searchdata:req.query.dsearch,
-          buddyusername:buddy.username
+          buddy:buddy
 
         });
         //  console.log(data);
@@ -226,13 +227,15 @@ app.post("/myapplication", async function (req, res) {
 app.get("/bud/:myemail",async function(req,res)
 {
     const fullprofile=await BuddyApplication.findOne({myemail:req.params.myemail});
+    const commentbuddy = await BuddyModel.findOne({ sessionID: req.session.id });
     res.render("showprofile",
     {
-        dataa:fullprofile
+        dataa:fullprofile,
+        commentby:commentbuddy.username
     })
 });
 
-app.get("/sendrequest/:myemail/:buddyusername",async function(req,res)
+app.get("/sendrequest/:myemail",async function(req,res)
 {
   const buddy = await BuddyModel.findOne({ sessionID: req.session.id });
    
@@ -289,6 +292,30 @@ main().catch(console.error);
 //   res.redirect("/");
 // });
 // >>>>>>> master
+
+app.post("/addcomment", async function(req,res)
+{
+
+    const addcomment= await BuddyApplication.findOne({myemail:req.body.commentedon});
+
+    addcomment.comments.push(req.body.commentbox);
+    addcomment.commentBy.push(req.body.commentby);
+
+    await addcomment.save(function (err) {
+    if (!err) {
+      console.log("Comment Saved");
+      // res.redirect("/myprofile");
+    } else console.log(err);
+
+
+
+});
+});
+
+
+
+
+
 
 app.listen("3000", function (req, res) {
   console.log("Connected successfully to the server");
