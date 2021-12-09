@@ -27,6 +27,7 @@
     "md5": "^2.3.0",
     "mongoose": "^6.0.9",
     "nodemailer": "^6.7.0",
+    "nodemon": "^2.0.15",
     "session": "^0.1.0"
   }
 }
