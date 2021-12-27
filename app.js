@@ -255,7 +255,7 @@ async function main() {
     from: buddy.email, // sender address
     to: req.params.myemail, // list of receivers
     subject: "Invite for Contribution in Project", // Subject line
-    text: "Hi there, the user "+req.params.buddyusername+" wants to invite you for your collaboration on the project. Kindly visit websitename and confirm your availability.",
+    text: "Hi there, the user "+req.params.buddyusername+" wants to invite you for your collaboration on the project. Kindly visit website and confirm your availability.",
   });
      if(info.messageId)
      console.log("Email sent");
